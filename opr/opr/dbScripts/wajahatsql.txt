@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[Campus_Table] (
+    [Id]                INT            IDENTITY (1, 1) NOT NULL,
+    [Campus_Name]       NVARCHAR (128) NOT NULL,
+    [Contact_Phone]     NVARCHAR (20)  NULL,
+    [Contact_Mobile]    NVARCHAR (20)  NULL,
+    [Campus_Email]      NVARCHAR (128) NULL,
+    [Campus_Address]    NVARCHAR (200) NULL,
+    [Registration_Date] DATETIME       NULL,
+    [User_ID]           NVARCHAR (128) NULL,
+    [Modified_By]       NVARCHAR (128) NULL,
+    [Modified_Date]     DATETIME       NULL,
+    [Is_Deleted]        BIT            NULL,
+    [Is_Active]         BIT            NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Group] (
+    [Id]            INT            IDENTITY (1, 1) NOT NULL,
+    [Group_Name]    NVARCHAR (30)  NOT NULL,
+    [Short_Code]    NCHAR (10)     NOT NULL,
+    [Description]   NVARCHAR (MAX) NULL,
+    [IsDeleted]     BIT            NULL,
+    [IsActive]      BIT            NULL,
+    [Entry_Date]    DATETIME       NOT NULL,
+    [User_Id]       NVARCHAR (128) NOT NULL,
+    [Modified_By]   NVARCHAR (128) NULL,
+    [Modified_Date] DATETIME       NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

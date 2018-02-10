@@ -1,0 +1,80 @@
+﻿@model List<opr.Models.School>
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+
+<body>
+    <h2>School Ini Details</h2>
+    <div style="align-content:center">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    </div>
+    <div>
+        <div>
+            @Html.ActionLink("New Add", "AddSchool", "School");
+        </div>
+        <div>
+            <table class="table table-dark table-striped ">
+                <tr>
+                    <th>ID</th>
+                    <th>School Name</th>
+                    <th>Address</th>
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                    <th>Contact Name</th>
+                    <th>Contact Persionr</th>
+                    <th>Principal</th>
+                    <th>Web#</th>
+                    <th>Phone</th>
+                    <th>Short Code</th>
+                    <th>Description</th>
+                    <th>Is Deleted</th>
+                    <th>Is Active</th>
+                    <th>User Id</th>
+                    <th>Entrey Date</th>
+                    <th>Modify By</th>
+                    <th>Modify Date</th>
+                    <th>Action</th>
+
+                </tr>
+                @foreach (var std in Model)
+                {
+
+                    <tr>
+                        <td>@std.Id</td>
+                        <td>@std.SchoolName</td>
+                        <td>@std.Address</td>
+                        <td>@std.ContactPerson</td>
+                        <td>@std.Email</td>
+                        <td>@std.ContactPname</td>
+                        <td>@std.ContactPnum</td>
+                        <td>@std.Principal</td>
+                        <td>@std.Web</td>
+                        <td>@std.Phone</td>
+                        <td>@std.ShortCode</td>
+                        <td>@std.Description</td>
+                        <td>@std.IsDeleted</td>
+                        <td>@std.IsActive</td>
+                        <td>@std.UserID</td>
+                        <td>@std.EnteryDate</td>
+                        <td>@std.ModifiedBy</td>
+                        <td>@std.ModifiedDate</td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "EditSchool", new { id = std.Id })|
+                            @Html.ActionLink("Delete", "Delete", new { id = std.Id })|
+                        </td>
+                    </tr>
+
+                }
+
+            </table>
+
+        </div>
+
+    </div>
+    <div>
+        @Html.ActionLink("<<Go Back<<", "AddSchool", "School");
+    </div>
+</body>
+</html>

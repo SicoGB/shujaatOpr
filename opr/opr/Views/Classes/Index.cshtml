@@ -1,0 +1,38 @@
+﻿@model List<opr.Models.ClassesTable>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+
+        <th>ID</th>
+        <th>Class Name</th>
+        <th>Short Code</th>
+        <th>Class Description</th>
+        <th>Entry Date</th>
+        <th>Modified By</th>
+        <th>Modified Date</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var data in Model)
+    {
+    <tr>
+
+        <td>@data.Id</td>
+        <td>@data.ClassName</td>
+        <td>@data.ShortCode</td>
+        <td>@data.ClassDescription</td>
+        <td>@data.EntryDate</td>
+        <td>@data.ModifiedBy</td>
+        <td>@data.ModifiedDate</td>
+        <td>@Html.ActionLink("Delete", "DeleteClass", new { Id = data.Id })</td>
+        <td>@Html.ActionLink("Edit", "EditClass", new { id = data.Id })</td>
+
+    </tr>
+
+    }
+    @Html.ActionLink("Add Class", "AddClass", new {  })
+</table>

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "EditClass";
+}
+
+<h2>EditClass</h2>
+
+@model opr.Models.ClassesTable
+
+
+<div>
+
+
+
+    @using (Html.BeginForm())
+    {
+    <form method="post">
+
+        @*@Html.TextBoxFor(model => model.UserId, new { required = "required", @class = "form-control" })*@
+        @* <label for="ClassName">Modified By</label>*@
+        @Html.HiddenFor(model => model.ModifiedBy, new { @Value = @ViewBag.ModifiedBy })
+        @Html.HiddenFor(model => model.UserId, new { })
+        <label for="ClassName">Class Name</label>
+        @Html.TextBoxFor(model => model.ClassName, new { required = "required", @class = "form-control" })
+        @*<label for="Registration Date">Registration Date</label>*@
+        @*@Html.TextBoxFor(model => model.EntryDate, new { required = "required", @class = "form-control", type = "date" })*@
+        <label for="ShortCode">Short Code</label>
+        @Html.HiddenFor(model => model.EntryDate, new { @Value = DateTime.Now.ToString("dd-MM-yyyy") })
+        @Html.TextBoxFor(model => model.ShortCode, new { required = "required", @class = "form-control" })
+        <label for="Class Description">Class Description</label>
+        @Html.TextAreaFor(model => model.ClassDescription, new { required = "required", @class = "form-control" })
+        @*<label for="ClassName">Modified Date </label>*@
+        @Html.HiddenFor(model => model.ModifiedDate, new { @Value = DateTime.Now.ToString("dd-MM-yyyy") })
+        <br />
+        <input type="submit" value="submit" />
+    </form>
+
+
+    }
+    @Html.ActionLink("Class Details", "Index", new { })
+</div>

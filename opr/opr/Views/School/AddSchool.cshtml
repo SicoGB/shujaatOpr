@@ -1,0 +1,122 @@
+﻿@model opr.Models.School
+@{
+    ViewBag.Title = "AddSchool";
+
+}
+<script src="~/Scripts/bootstrap.min.js"></script>
+<h2>Add Schools</h2>
+@using (Html.BeginForm())
+{
+<div class="container">
+    <form action="" method="post">
+        <div class="form-group row">
+
+            <div class="col-xs-4">
+                <label for="ex3">School Name:</label>
+                @Html.TextBoxFor(model => model.SchoolName, new { required = "required", @class = "form-control", placeholder = "Enter School Name" })
+            </div>
+            <div class="col-xs-4">
+                <label for="ex3">School Address:</label>
+                @Html.TextBoxFor(model => model.Address, new { required = "required", @class = "form-control", placeholder = "Enter Address" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Contact Person name:</label>
+                @Html.TextBoxFor(model => model.ContactPerson, new { required = "required", @class = "form-control", placeholder = "Enter Contact Name" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Email:</label>
+                @Html.TextBoxFor(model => model.Email, new { required = "required", @class = "form-control", placeholder = "Enter Email" })
+
+            </div>
+
+            <div class="col-xs-4">
+
+                <label for="ex3">Contact Name:</label>
+                @Html.TextBoxFor(model => model.ContactPname, new { required = "required", @class = "form-control", placeholder = "Enter Email" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Contact Person Number:</label>
+                @Html.TextBoxFor(model => model.ContactPnum, new { required = "required", @class = "form-control", placeholder = "Enter Contact Person Name" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Principal Name:</label>
+                @Html.TextBoxFor(model => model.Principal, new { required = "required", @class = "form-control", placeholder = "Enter Principal Name" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Web Name:</label>
+                @Html.TextBoxFor(model => model.Web, new { required = "required", @class = "form-control", placeholder = "Enter Web Site Name" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">phone Number:</label>
+                @Html.TextBoxFor(model => model.Phone, new { required = "required", @class = "form-control", placeholder = "Enter Phone Number" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Short Code:</label>
+                @Html.TextBoxFor(model => model.ShortCode, new { required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+
+            </div>
+            <div class="col-xs-4">
+
+                <label for="ex3">Description:</label>
+
+                @Html.TextAreaFor(model => model.Description, new { required = "required", @class = "form-control", placeholder = "Enter Description" })
+
+            </div>
+            <div class="form-group">
+                <label>
+                      
+                    @Html.HiddenFor(model => model.IsDeleted, new { @Vlaue = "1", required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    @*<label for="email">IsActive:</label>*@
+                    @Html.HiddenFor(model => model.IsActive, new {@Vlaue="0", required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                   @* <label for="email">Entery Date:</label>*@
+                    @Html.HiddenFor(model => model.ModifiedDate, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required", @class = "form-control" })
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    @*<label for="email">Modified By:</label>*@
+                    @Html.HiddenFor(model => model.ModifiedBy, new { required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    @*<label for="email">Modified Date:</label>*@
+                    @Html.HiddenFor(model => model.ModifiedDate, new { required = "required", @class = "form-control"})
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                   @* <label for="email">User Id:</label>*@
+                    @Html.HiddenFor(model => model.UserID, new {@Value=ViewBag.ide, required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+                </label>
+            </div>
+            <label><input type="submit" value="Submit" name="submit" /></label>
+        </div>
+    </form>
+</div>
+    @Html.ActionLink("Details Show", "Index", "School");
+}
+

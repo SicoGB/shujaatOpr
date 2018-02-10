@@ -1,0 +1,92 @@
+﻿@model opr.Models.StudentTable
+
+@{
+    ViewBag.Title = "AddClass";
+}
+
+
+<h2>Student Registration</h2>
+
+    <div class="container">
+        <div class="row">
+
+            @using (Html.BeginForm())
+    {
+        <div class="col-sm-4">
+            @Html.HiddenFor(model => model.StdUserId, new { @Value = @ViewBag.UserId })
+            <label for="StudentName">Student Name</label>
+            @Html.TextBoxFor(model => model.StudentName, new { required = "required", @class = "form-control" })
+            <label for="fathername">Father Name</label>
+            @Html.TextBoxFor(model => model.StdFatherName, new { required = "required", @class = "form-control" })
+            <label for="GuardianName">Guardian Name</label>
+            @Html.TextBoxFor(model => model.StdGuardianName, new { required = "required", @class = "form-control" })
+
+            <label for="ShortCode">Guardian Contact</label>
+            @Html.TextBoxFor(model => model.StdGuardianContact, new { required = "required", @class = "form-control" })
+            
+            @Html.HiddenFor(model => model.EntryDate, new { @Value = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss") })
+
+            <label for="Email">Email</label>
+            @Html.TextBoxFor(model => model.StudentEmail, new { required = "required", @class = "form-control" })
+            <label for="Contact">Contact</label>
+            @Html.TextBoxFor(model => model.StudentContact, new { required = "required", @class = "form-control" })
+            <label for="CNIC">CNIC</label>
+            @Html.TextBoxFor(model => model.StudentCnic, new { required = "required", @class = "form-control" })
+            <label for="PermanentAddress">Permanent Address</label>
+            @Html.TextBoxFor(model => model.StudentPermntAddress, new { required = "required", @class = "form-control" })
+        </div>
+        <div class="col-sm-4">
+            @*<label for="Province">Province</label>*@
+            @* @Html.DropDownListFor(Model => Model.StdProvince, (SelectList)ViewBag.dataForDropDown1, htmlAttributes: new { @class = "form-control", id = "class" })*@
+            @*<label for="District">District</label>*@
+            @* @Html.DropDownListFor(Model => Model.StdDistrict, (SelectList)ViewBag.dataForDropDown2, htmlAttributes: new { @class = "form-control", id = "class" })*@
+            @*<label for="StudentName">Tehsil</label>*@
+            @*@Html.DropDownListFor(Model => Model.StdTehsil, (SelectList)ViewBag.dataForDropDown3, htmlAttributes: new { @class = "form-control", id = "class" })*@
+            @*<label for="StudentName">Domicile</label>*@
+            @* @Html.DropDownListFor(Model => Model.Domicile, (SelectList)ViewBag.dataForDropDown4, htmlAttributes: new { @class = "form-control", id = "class" })*@
+
+            <label for="TemporaryAddress">Temporary Address</label>
+            @Html.TextBoxFor(model => model.StudentTempAddress, new { required = "required", @class = "form-control" })
+            @* <label for="TemporaryAddress">Zip Code</label>*@
+            @*@Html.DropDownListFor(Model => Model.StdZipCode, (SelectList)ViewBag.dataForDropDown5, htmlAttributes: new { @class = "form-control", id = "class" })*@
+            <label for="InstitutionLastAttended">Institution Last Attended</label>
+            @Html.TextBoxFor(model => model.InstituteLastAttended, new { required = "required", @class = "form-control" })
+            <label for="Qualification">Qualification</label>
+            @Html.TextBoxFor(model => model.StdQualification, new { required = "required", @class = "form-control" })
+            <label for="BloodGroup">Blood Group</label>
+            @Html.TextBoxFor(model => model.StudentBloodGrp, new { required = "required", @class = "form-control" })
+            @*<label for="User ID">User ID</label>
+        @Html.TextBoxFor(model => model.UserId, new { required = "required", @class = "form-control" })
+        <label for="Password">Password</label>
+        @Html.TextBoxFor(model => model.Password, new { required = "required", @class = "form-control" })*@
+            <label for="Gender">Gender</label>
+            <br>
+            @Html.RadioButton("Gender", "Male") Male
+            <br>
+            @Html.RadioButton("Gender", "Female") Female
+            <label for="Active">Active/DeActive </label>
+           
+            @*@Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "form-control"*@
+
+            <br />
+            @Html.EditorFor(model => model.IsActive)
+
+
+            @* @Html.HiddenFor(model => model.ModifiedDate, new { required = "required", @class = "form-control", type = "date" })*@
+            
+            <br>
+            <br>
+            <input type="submit" value="submit" />
+
+        </div>
+
+
+
+}
+            @Html.ActionLink("Student Details", "Index", new { })
+
+
+            <div class="col-sm-4"></div>
+        </div>
+        </div>
+

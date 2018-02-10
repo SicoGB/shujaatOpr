@@ -1,0 +1,61 @@
+﻿@model opr.Models.Group
+@{
+    ViewBag.Title = "AddGroup";
+
+}
+<div class="row row">
+    <div class="head col-lg-12 table-bordered" style="background-color:chartreuse">
+        <h2>List Of Groups</h2>
+    </div>
+</div>
+<div class="container table-bordered ">
+    <div class="row">
+        <div class="col">
+            <form method="post">
+                @*@Html.Label("User ID :")*@
+                <br />
+                @Html.HiddenFor(Model => Model.User_Id, new {@Value=ViewBag.ids , required = "required", })
+                <br />
+                @Html.Label("Group Name :")
+                <br />
+                @Html.TextBoxFor(Model => Model.Group_Name, new { required = "required", })
+                <br />
+                @Html.Label("Short COde :")
+                <br />
+                @Html.TextBoxFor(Model => Model.Short_Code, new { required = "required", })
+               
+               @Html.HiddenFor(Model => Model.Modified_By, new { @Value = ViewBag.name, required = "required" })
+             
+               
+                @Html.HiddenFor(Model => Model.Modified_Date, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required"})
+              
+                @Html.HiddenFor(Model => Model.Entry_Date, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required" })
+                <br />
+                @Html.Label("Description :")
+                <br />
+                @Html.TextAreaFor(Model => Model.Description, new { required = "required", placeholder = "Write something..", style = "height:200px" })
+                
+                @Html.HiddenFor(Model => Model.IsDeleted, "True")
+               
+                @Html.HiddenFor(Model => Model.IsDeleted, "False")
+               
+                @Html.HiddenFor(Model => Model.IsActive, "True")
+              
+                @Html.HiddenFor(Model => Model.IsActive, "False")
+                
+
+
+                <br />
+                <br />
+                <input class="btn-group-sm" type="submit" name="submit" />
+            </form>
+        </div>
+    </div>
+    <br />
+    <div class="btn  btn-default" >
+        @Html.ActionLink("Go to List", "Index")
+    </div>
+</div>
+
+
+

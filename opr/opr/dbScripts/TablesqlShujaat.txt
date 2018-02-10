@@ -1,0 +1,45 @@
+﻿CREATE TABLE [dbo].[ClassesTable] (
+    [Id]               INT            IDENTITY (1, 1) NOT NULL,
+    [ClassName]        NCHAR (30)     NOT NULL,
+    [ShortCode]        NCHAR (8)      NOT NULL,
+    [ClassDescription] NVARCHAR (MAX) NOT NULL,
+    [IsDeleted]        BIT            NOT NULL,
+    [IsActive]         BIT            NOT NULL,
+    [UserId]           NVARCHAR (128) NULL,
+    [EntryDate]        DATETIME       NULL,
+    [ModifiedBy]       NVARCHAR (128) NULL,
+    [ModifiedDate]     DATETIME       NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[StudentTable] (
+    [Id]                    INT            IDENTITY (1, 1) NOT NULL,
+    [StudentName]           NVARCHAR (128) NULL,
+    [StdFatherName]         NVARCHAR (128) NULL,
+    [StudentTempAddress]    NVARCHAR (MAX) NULL,
+    [StudentPermntAddress]  NVARCHAR (128) NULL,
+    [StudentContact]        NVARCHAR (128) NULL,
+    [StudentEmail]          NVARCHAR (128) NULL,
+    [StudentBloodGrp]       NVARCHAR (128) NULL,
+    [StudentCnic]           NVARCHAR (128) NULL,
+    [EntryDate]             DATETIME       NULL,
+    [Gender]                NCHAR (128)    NULL,
+    [InstituteLastAttended] NVARCHAR (128) NULL,
+    [StdGuardianName]       NVARCHAR (128) NULL,
+    [StdGuardianContact]    NVARCHAR (128) NULL,
+    [StdDistrict]           NVARCHAR (128) NULL,
+    [StdTehsil]             NVARCHAR (128) NULL,
+    [StdProvince]           NVARCHAR (128) NULL,
+    [StdZipCode]            NVARCHAR (128) NULL,
+    [StdUserId]             NVARCHAR (128) NULL,
+    [Password]              NVARCHAR (128) NULL,
+    [StdQualification]      NCHAR (10)     NULL,
+    [Domicile]              NVARCHAR (128) NULL,
+    [ModifiedBy]            NVARCHAR (128) NULL,
+    [ModifiedDate]          NVARCHAR (128) NULL,
+    [IsActive]              BIT            NULL,
+    [IsDeleted]             BIT            NULL,
+    [UserId]                NVARCHAR (128) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

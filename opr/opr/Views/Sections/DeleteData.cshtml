@@ -1,0 +1,29 @@
+﻿@model  opr.Models.Section
+@{
+    ViewBag.Title = "DeleteData";
+}
+
+<h2>DeleteData</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <form>
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Name)
+            @Html.HiddenFor(model => model.ShortCode)
+            @Html.HiddenFor(model => model.Description)
+            @Html.HiddenFor(model => model.UserId)
+            @Html.HiddenFor(model => model.EntryDate)
+            @Html.HiddenFor(model => model.ModifiedBy)
+            @Html.HiddenFor(model => model.ModifiedDate)
+            <label for="isdeleted">Is Deleted</label>
+            @Html.CheckBox("IsDeleted", Model.IsDeleted.HasValue ? Model.IsDeleted : false)
+            <label for="isactive">Is Active</label>
+            @Html.CheckBox("IsActive", Model.IsActive.HasValue ? Model.IsActive : false)
+            <input type="submit" value="submit" />        
+        </form>
+
+    </div>
+
+}

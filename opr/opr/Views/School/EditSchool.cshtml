@@ -1,0 +1,123 @@
+﻿@model opr.Models.School
+@{
+    ViewBag.Title = "EditSchool";
+}
+<h2>AddSubject</h2>
+
+@using (Html.BeginForm())
+{
+    <h2>Subject Info</h2>
+    <p>@Html.ValidationSummary(true)</p>
+    <form action="" method="post">
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group">
+            <label>
+                <label for="email">School Name:</label>
+                @Html.TextBoxFor(model => model.SchoolName, new { required = "required", @class = "form-control", placeholder = "Enter School Name" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">School Address:</label>
+                @Html.TextBoxFor(model => model.Address, new { required = "required", @class = "form-control", placeholder = "Enter Address" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">Contact Person name:</label>
+                @Html.TextBoxFor(model => model.ContactPerson, new { required = "required", @class = "form-control", placeholder = "Enter Contact Name" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">Email:</label>
+                @Html.TextBoxFor(model => model.Email, new { required = "required", @class = "form-control", placeholder = "Enter Email" })
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <label for="email">Contact Name:</label>
+                @Html.TextBoxFor(model => model.ContactPname, new { required = "required", @class = "form-control", placeholder = "Enter Email" })
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <label for="email">Contact Person Number:</label>
+                @Html.TextBoxFor(model => model.ContactPnum, new { required = "required", @class = "form-control", placeholder = "Enter Contact Person Name" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">Principal Name:</label>
+                @Html.TextBoxFor(model => model.Principal, new { required = "required", @class = "form-control", placeholder = "Enter Principal Name" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">Web Name:</label>
+                @Html.TextBoxFor(model => model.Web, new { required = "required", @class = "form-control", placeholder = "Enter Web Site Name" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">phone Number:</label>
+                @Html.TextBoxFor(model => model.Phone, new { required = "required", @class = "form-control", placeholder = "Enter Phone Number" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">Short Code:</label>
+                @Html.TextBoxFor(model => model.ShortCode, new { required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">Description:</label>
+
+                @Html.TextAreaFor(model => model.Description, new { required = "required", @class = "form-control", placeholder = "Enter Description" })
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <label for="email">Is Deleted:</label>
+                @Html.TextBoxFor(model => model.IsDeleted, new { required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <label for="email">IsActive:</label>
+                @Html.TextBoxFor(model => model.IsActive, new { required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                @* <label for="email">User Id:</label>*@
+                @Html.HiddenFor(model => model.UserID, new { required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+            </label>
+        </div>
+
+
+        <div class="form-group">
+            <label>
+                @*<label for="email">Entery Date:</label>*@
+                @Html.HiddenFor(model => model.EnteryDate, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required", @class = "form-control" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                @* <label for="email">Modified By:</label>*@
+                @Html.HiddenFor(model => model.ModifiedBy, new { @Value = @ViewBag.modifiedBy, required = "required", @class = "form-control", placeholder = "Enter Short Code" })
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                @* <label for="email">Modified Date:</label>*@
+                @Html.HiddenFor(model => model.ModifiedDate, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required", @class = "form-control" })
+            </label>
+        </div>
+        <input type="submit" value="Update Now" />
+    </form>
+}

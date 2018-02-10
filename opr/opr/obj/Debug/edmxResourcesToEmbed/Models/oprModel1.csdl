@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ClassesTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ShortCode" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ClassDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="StudentTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdFatherName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StudentTempAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StudentPermntAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StudentContact" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StudentEmail" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StudentBloodGrp" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StudentCnic" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="128" FixedLength="true" Unicode="true" />
+    <Property Name="InstituteLastAttended" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdGuardianName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdGuardianContact" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdDistrict" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdTehsil" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdProvince" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdZipCode" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdUserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdQualification" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Domicile" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StdImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="oprEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClassesTables" EntityType="Self.ClassesTable" />
+    <EntitySet Name="StudentTables" EntityType="Self.StudentTable" />
+  </EntityContainer>
+</Schema>

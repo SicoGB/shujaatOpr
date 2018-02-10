@@ -1,0 +1,62 @@
+﻿@model List<opr.Models.StudentTable>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<div class="col col-lg-0"></div>
+
+<div class="col col-lg-12">
+    <table class="table">
+        <tr>
+            <th> Name</th>
+            <th>Father Name</th>
+            <th>Guardian Name</th>
+            <th>Guardian Contact</th>
+            <th>Registration Date</th>
+            <th>Email</th>
+            <th> Contact</th>
+            <th>CNIC</th>
+
+            <th> Permanent Address</th>
+            <th>Temporary Address</th>
+
+            <th>Institution Last Attended</th>
+            <th>Qualification</th>
+            <th>Blood Group</th>
+            <th>Gender</th>
+            <th>Modified By</th>
+            <th>Modified Date</th>
+
+        </tr>
+        @foreach (var dt in Model)
+    {
+        <tr>
+
+            <td>@dt.StudentName</td>
+            <td>@dt.StdFatherName</td>
+            <td>@dt.StdGuardianName</td>
+            <td>@dt.StdGuardianContact</td>
+            <td>@dt.EntryDate</td>
+            <td>@dt.StudentEmail</td>
+            <td>@dt.StudentContact</td>
+            <td>@dt.StudentCnic</td>
+            <td>@dt.StudentPermntAddress</td>
+            <td>@dt.StudentTempAddress</td>
+            <td>@dt.InstituteLastAttended</td>
+            <td>@dt.StdQualification</td>
+            <td>@dt.StudentBloodGrp</td>
+            <td>@dt.Gender</td>
+            <td>@dt.ModifiedBy</td>
+            <td>@dt.ModifiedDate</td>
+            <td>@Html.ActionLink("Delete", "DeleteStudent", new { Id = dt.Id })</td>
+            <td>@Html.ActionLink("Edit", "EditStudent", new { id = dt.Id })</td>
+
+        </tr>
+}
+        @Html.ActionLink("Add Student", "AddStudent", new { })
+    </table>
+    </table>
+</div>
+<div class="col col-lg-0"></div>
+
+

@@ -1,0 +1,49 @@
+﻿@model  opr.Models.Section
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <form>
+
+            <label for="name">Section Name</label>
+            @Html.TextBoxFor(model => model.Name, new { required = "required", @class = "form-control" })
+            <label for="shortcode">Section Short Code</label>
+            @Html.TextBoxFor(model => model.ShortCode, new { required = "required", @class = "form-control" })
+            <label for="description">Description</label>
+            @Html.TextBoxFor(model => model.Description, new { required = "required", @class = "form-control" })
+            @*<label for="userid">User Id</label>*@
+            @*@Html.TextBoxFor(model => model.UserId,  new { @value = ViewData["ee"] })*@
+            @*@Html.TextBoxFor(model => model.UserId, new { required = "required", @class = "form-control" })*@
+            <input type="hidden" name="UserId" value="@ViewBag.InitialValue">
+            @*@Html.HiddenFor(model => model.UserId, value = "@ViewBag.InitialValue");*@
+            @*<label for="entrydate">Entry Date</label>*@
+            @*@Html.TextBoxFor(model => model.EntryDate, new { type = "date", required = "required", @class = "form-control" })*@
+            <input type="hidden" name="EntryDate" value=@ViewBag.DateTime>
+            @*@Html.TextBox("EntryDate", DateTime.Now.ToString("dd-MMM-yyyy"))*@
+            @*<label for="modifiedby">Modified By</label>*@
+            @*@Html.TextBoxFor(model => model.ModifiedBy, new { required = "required", @class = "form-control" })*@
+            <input type="hidden" name="ModifiedBy" value="@ViewBag.InitialValue">
+            @*<label for="modifieddate">Modified Date</label>*@
+            @*@Html.TextBoxFor(model => model.ModifiedDate, new { type = "date", required = "required", @class = "form-control" })*@
+            <input type="hidden" name="ModifiedDate" value=@ViewBag.DateTime>
+            <label for="isdeleted">Is Deleted</label>
+            @Html.CheckBox("IsDeleted", Model.IsDeleted.HasValue ? Model.IsDeleted : false)
+            @*@Html.CheckBox("IsDeleted", Model.IsDeleted.HasValue ? Model.IsDeleted : false)*@
+            <label for="isactive">Is Active</label>
+            @*@Html.CheckBoxFor(model => model.IsActive.Value, new { @class = "form-control" })*@
+            @Html.CheckBox("IsActive", Model.IsActive.HasValue ? Model.IsActive : false)
+
+            <br />
+            <br />
+            <input type="submit" value="submit" class="btn-primary btn-lg" />
+            <input type="submit" value="Add" class="btn-primary btn-lg" />
+        </form>
+
+    </div>
+
+}

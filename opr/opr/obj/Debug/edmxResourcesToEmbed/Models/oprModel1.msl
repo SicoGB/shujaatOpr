@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="oprEntities">
+    <EntitySetMapping Name="ClassesTables">
+      <EntityTypeMapping TypeName="Model.ClassesTable">
+        <MappingFragment StoreEntitySet="ClassesTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ShortCode" ColumnName="ShortCode" />
+          <ScalarProperty Name="ClassDescription" ColumnName="ClassDescription" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentTables">
+      <EntityTypeMapping TypeName="Model.StudentTable">
+        <MappingFragment StoreEntitySet="StudentTable">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="StdImage" ColumnName="StdImage" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="StdFatherName" ColumnName="StdFatherName" />
+          <ScalarProperty Name="StudentTempAddress" ColumnName="StudentTempAddress" />
+          <ScalarProperty Name="StudentPermntAddress" ColumnName="StudentPermntAddress" />
+          <ScalarProperty Name="StudentContact" ColumnName="StudentContact" />
+          <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+          <ScalarProperty Name="StudentBloodGrp" ColumnName="StudentBloodGrp" />
+          <ScalarProperty Name="StudentCnic" ColumnName="StudentCnic" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="InstituteLastAttended" ColumnName="InstituteLastAttended" />
+          <ScalarProperty Name="StdGuardianName" ColumnName="StdGuardianName" />
+          <ScalarProperty Name="StdGuardianContact" ColumnName="StdGuardianContact" />
+          <ScalarProperty Name="StdDistrict" ColumnName="StdDistrict" />
+          <ScalarProperty Name="StdTehsil" ColumnName="StdTehsil" />
+          <ScalarProperty Name="StdProvince" ColumnName="StdProvince" />
+          <ScalarProperty Name="StdZipCode" ColumnName="StdZipCode" />
+          <ScalarProperty Name="StdUserId" ColumnName="StdUserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="StdQualification" ColumnName="StdQualification" />
+          <ScalarProperty Name="Domicile" ColumnName="Domicile" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

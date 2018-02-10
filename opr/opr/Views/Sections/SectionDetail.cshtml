@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "SectionDetail";
+}
+
+<h2>Section List</h2>
+
+    <div class="table-responsive" style="border:solid;border-color:lightgrey;">
+
+        <table class="table table-striped">
+
+            <tr class="active">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Short Code</th>
+                <th>Description</th>
+                <th>User Id</th>
+                <th>Entry Date</th>
+                <th>Modified By</th>
+                <th>Modified Date</th>
+                <th>Is Deleted</th>
+                <th>Is Active</th>
+            </tr>
+            @foreach (var modeldt in Model)
+        {
+            <tr>
+
+                <td>@modeldt.Id</td>
+                <td>@modeldt.Name</td>
+                <td>@modeldt.ShortCode</td>
+                <td>@modeldt.Description</td>
+                <td>@modeldt.UserId</td>
+                <td>@modeldt.EntryDate</td>
+                <td>@modeldt.ModifiedBy</td>
+                <td>@modeldt.ModifiedDate</td>
+                <td>@modeldt.IsDeleted</td>
+                <td>@modeldt.IsActive</td>
+
+
+                <td>@Html.ActionLink("Delete", "DeleteData", new { id = modeldt.Id })</td>
+                <td>@Html.ActionLink("Edit", "EditView", new { id = modeldt.Id})</td>
+
+            </tr>
+    }
+        </table>
+
+    </div>
+
+
